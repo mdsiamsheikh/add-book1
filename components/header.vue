@@ -65,7 +65,7 @@
                   />
                 </svg>
               </td>
-              <td>
+              <td class="siam3" @click="deleteData(item.id)">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 30 30"
@@ -129,6 +129,17 @@ export default {
       } catch (error) {
         console.log(error);
       }
+    },
+    async deleteData(id) {
+      console.log("siam");
+      await this.$axios.delete(
+        "https://zany-rose-alligator-yoke.cyclic.app/todo/" + id
+      );
+
+      this.items = this.items.splice(id, 1);
+    },
+    catch(error) {
+      console.log(error);
     },
   },
 
