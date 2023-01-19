@@ -33,9 +33,24 @@
             placeholder="Released"
           />
         </div>
-        <button type="submit" @click.prevent="postData()" class="btn">
-          Add In Your List
-        </button>
+        <div>
+          <button
+            type="submit"
+            v-if="awawesome"
+            @click.prevent="postData(id.item)"
+            class="btn"
+          >
+            Add In Your List
+          </button>
+          <button
+            type="submit"
+            v-else
+            @click.prevent="postData(id.item)"
+            class="btn"
+          >
+            Update Ypur List
+          </button>
+        </div>
       </form>
 
       <section class="table">
@@ -53,7 +68,8 @@
               <td>{{ item.bookName }}</td>
               <td>{{ item.author }}</td>
               <td>{{ item.released }}</td>
-              <td>
+
+              <td class="siam4" @click="putData(item.id, item)">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 30 30"
@@ -65,6 +81,7 @@
                   />
                 </svg>
               </td>
+
               <td class="siam3" @click="deleteData(item.id)">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -78,6 +95,7 @@
                 </svg>
               </td>
             </tr>
+
             <tr></tr>
           </table>
         </section>
@@ -90,6 +108,7 @@
 
 <script>
 import axios from "axios";
+
 export default {
   data() {
     return {
@@ -97,6 +116,8 @@ export default {
       title: "",
       author: "",
       released: "",
+      awawesome: false,
+      response: null,
     };
   },
   methods: {
@@ -116,10 +137,11 @@ export default {
           author: this.author,
           released: this.released,
         };
-        const { response } = await this.$axios.post(
+        await this.$axios.post(
           "https://zany-rose-alligator-yoke.cyclic.app/todo",
           data
         );
+
         this.items.push({
           bookName: this.title,
           author: this.author,
@@ -130,13 +152,26 @@ export default {
         console.log(error);
       }
     },
+    async putData(id, item) {
+      this.id.item = false;
+
+      console.log(id, item);
+      this.title = item.bookName;
+      this.author = item.author;
+      this.released = item.released;
+    },
+
     async deleteData(id) {
       console.log("siam");
       await this.$axios.delete(
-        "https://zany-rose-alligator-yoke.cyclic.app/todo/" + id
+        `https://zany-rose-alligator-yoke.cyclic.app/todo/${id}`
       );
+      const item = this.items.map((item) => item.id).indexOf(id);
+      this.items.splice(item, 1);
+      this.items;
 
-      this.items = this.items.splice(id, 1);
+      // this.items = this.items.splice(id, 1);
+      console.log(item);
     },
     catch(error) {
       console.log(error);
