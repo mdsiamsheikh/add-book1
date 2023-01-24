@@ -16,7 +16,7 @@
         <div>
           <label for="author"> Author</label>
           <input
-            type="author"
+            type="text"
             id="author"
             value="data.author"
             v-model="author"
@@ -26,29 +26,23 @@
         <div>
           <label for="Released">Released</label>
           <input
-            type="Released"
+            type="text"
             id="Released"
             value="Released"
             v-model="released"
             placeholder="Released"
           />
         </div>
-        <div>
-          <button
-            type="submit"
-            v-if="awawesome"
-            @click.prevent="postData(id.item)"
-            class="btn"
-          >
+
+        <div v-if="!awawesome">
+          <button type="submit" @click.prevent="postData()" class="btn">
             Add In Your List
           </button>
-          <button
-            type="submit"
-            v-else
-            @click.prevent="postData(id.item)"
-            class="btn"
-          >
-            Update Ypur List
+        </div>
+
+        <div v-else>
+          <button type="submit" @click.prevent="updateItem()" class="btn">
+            Update Your List
           </button>
         </div>
       </form>
@@ -116,6 +110,7 @@ export default {
       title: "",
       author: "",
       released: "",
+      scletindex: null,
       awawesome: false,
       response: null,
     };
@@ -141,28 +136,45 @@ export default {
           "https://zany-rose-alligator-yoke.cyclic.app/todo",
           data
         );
-
         this.items.push({
           bookName: this.title,
           author: this.author,
           released: this.released,
         });
+        this.title = "";
+        this.author = "";
+        this.released = "";
         console.log(response);
       } catch (error) {
         console.log(error);
       }
     },
     async putData(id, item) {
-      this.id.item = false;
-
-      console.log(id, item);
+      this.awawesome = true;
       this.title = item.bookName;
       this.author = item.author;
       this.released = item.released;
+      this.scletindex = id;
     },
-
+    async updateItem() {
+      try {
+        await this.$axios.put(
+          `https://zany-rose-alligator-yoke.cyclic.app/todo/${this.scletindex}`,
+          {
+            bookName: this.title,
+            author: this.author,
+            released: this.released,
+          }
+        );
+      } catch (error) {
+        console.log(error);
+      } finally {
+        this.fetch();
+      }
+    },
     async deleteData(id) {
       console.log("siam");
+      // alert("are you sure!!");
       await this.$axios.delete(
         `https://zany-rose-alligator-yoke.cyclic.app/todo/${id}`
       );
@@ -171,6 +183,7 @@ export default {
       this.items;
 
       // this.items = this.items.splice(id, 1);
+
       console.log(item);
     },
     catch(error) {
