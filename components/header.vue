@@ -188,104 +188,101 @@ export default {
 </script>
 
 <style>
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #080809;
-  background: linear-gradient(blueviolet, rgb(82, 5, 154));
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-  font-family: sans-serif;
-}
-
-.siam h1 {
-  position: relative;
-  color: #fff;
-  margin-top: 20px;
-  left: 22px;
-}
-
 .container {
-  width: 100%;
-  height: 600px;
-  /* max-width: 1200px;
-  margin: auto; */
-  padding: 20px;
-  color: white;
-  position: relative;
-}
-
-input {
-  width: 100%;
-  padding: 15px;
-  margin-top: 4px;
-  margin-bottom: 20px;
-  outline: none;
-  box-sizing: border-box;
-  border-radius: 5px;
-  margin-top: 10px;
-}
-
-#book-list {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  overflow: hidden;
-  word-wrap: break-word;
-  background: #fff;
-  color: #000;
-}
-
-#book-list > section {
-  display: flex;
+  background: #e8e8ec;
   align-items: center;
-  text-align: center;
-  justify-content: space-around;
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
+  justify-content: center;
+  width: 1200px;
+  margin: auto;
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: -30px;
+  padding: 5px 10px 30px 10px;
+}
+h1 {
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #004b63;
+}
+
+#book-form {
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+  color: #2479b3;
+}
+
+div {
+  margin-top: 10px;
+  padding: 5px 0;
+}
+
+.u-full-width {
+  color: #0a0a0a !important;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+div input {
+  box-sizing: border-box;
+  margin-top: 5px;
+  border: 1px #96b2c0 solid;
+  outline: none;
+  border-radius: 7px;
+  width: 100%;
+  padding: 8px 15px;
+  font-size: 14px;
 }
 
 .btn {
-  background: deeppink;
-  border: none;
-  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 5px;
+  border: 1px #96b2c0 solid;
+  background: #68a0b5;
+  color: white;
+  border-radius: 7px;
   width: 100%;
-  margin-bottom: 20px;
-  font-size: 17px;
-  padding: 15px;
+  padding: 8px;
   cursor: pointer;
-  border-radius: 5px;
 }
 
 .table-section {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  margin-top: 8px;
+  margin-top: 2px;
+  border-radius: 7px !important;
 }
-
 table {
   width: 100%;
   text-align: left;
-  /* height: 35vh; */
-  padding: 10px;
-
-  border-radius: 5px;
+  width: 100%;
+  height: 100%;
 }
 
-.header {
-  width: 100%;
-  height: 5vh;
-  background: crimson !important;
+td {
+  padding: 5px 20px;
+}
+
+.table-header {
+  padding: 10px 5px !important;
+  background: #0c5b75 !important;
+  color: white;
+  border-radius: 5px !important;
+}
+
+.table-header th {
+  padding: 10px 20px;
 }
 
 tr:nth-child(odd) {
-  background: rgb(214, 96, 96);
+  background: #c0ced3;
+}
+
+tr:nth-child(even) {
+  background: rgb(223, 217, 217);
 }
 </style>
