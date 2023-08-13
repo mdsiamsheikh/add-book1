@@ -1,7 +1,7 @@
 <template>
   <div class="siam">
-    <h1>Add Favorite Book</h1>
     <section class="container">
+      <h1>Add Favorite Book</h1>
       <form id="book-form">
         <div>
           <label for="title">Book</label>
@@ -117,7 +117,9 @@ export default {
   },
   methods: {
     async fetch() {
-      const { data } = await this.$axios.get("http://localhost:3001/todo/all");
+      const { data } = await this.$axios.get(
+        "https://todo-list-aexi.onrender.com/todo/all"
+      );
       this.items = data.todos;
       console.log(data.todos);
     },
@@ -130,7 +132,10 @@ export default {
           author: this.author,
           released: this.released,
         };
-        await this.$axios.post("http://localhost:3001/todo", data);
+        await this.$axios.post(
+          "https://todo-list-aexi.onrender.com/todo",
+          data
+        );
         this.items.push({
           bookName: this.title,
           author: this.author,
@@ -153,11 +158,14 @@ export default {
     },
     async updateItem() {
       try {
-        await this.$axios.put(`http://localhost:3001/todo/${this.scletindex}`, {
-          bookName: this.title,
-          author: this.author,
-          released: this.released,
-        });
+        await this.$axios.put(
+          `https://todo-list-aexi.onrender.com/todo/${this.scletindex}`,
+          {
+            bookName: this.title,
+            author: this.author,
+            released: this.released,
+          }
+        );
       } catch (error) {
         console.log(error);
       } finally {
@@ -167,7 +175,9 @@ export default {
     async deleteData(id) {
       console.log("siam");
       // alert("are you sure!!");
-      await this.$axios.delete(`http://localhost:3001/todo/${id}`);
+      await this.$axios.delete(
+        `https://todo-list-aexi.onrender.com/todo/${id}`
+      );
       const item = this.items.map((item) => item.id).indexOf(id);
       this.items.splice(item, 1);
       this.items;
