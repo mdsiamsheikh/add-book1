@@ -222,6 +222,7 @@ h1 {
   font-size: 1.5rem;
   padding-bottom: 10px;
   color: #2479b3;
+  padding: 3px;
 }
 
 div {
