@@ -298,7 +298,7 @@ td {
 
 th {
   text-align: center;
-  padding: 12px;
+  padding: 8px;
   border-radius: 5px;
 }
 
@@ -309,14 +309,14 @@ tr:nth-child(odd) {
 tr:nth-child(even) {
   background: rgb(223, 217, 217);
 }
-
-/* mobile responsive */
+/* Mobile responsive */
 @media only screen and (max-width: 375px) {
   .container {
     background: #e8e8ec;
   }
 }
-@media only screen and (min-width: 475px) {
+
+@media only screen and (min-width: 376px) and (max-width: 475px) {
   .container {
     background: #e8e8ec;
   }
