@@ -202,10 +202,11 @@ export default {
   background: #e8e8ec;
   align-items: center;
   justify-content: center;
-  width: 1200px;
+  max-width: 1200px;
   margin: auto;
   box-sizing: border-box;
   padding: 0 10px;
+  border-radius: 5px;
   font-family: Arial, Helvetica, sans-serif;
   margin-top: -30px;
   padding: 5px 10px 30px 10px;
@@ -222,7 +223,7 @@ h1 {
   font-size: 1.5rem;
   padding-bottom: 10px;
   color: #2479b3;
-  padding: 3px;
+  padding: 14px;
 }
 
 div {
@@ -243,7 +244,7 @@ div input {
   outline: none;
   border-radius: 7px;
   width: 100%;
-  padding: 8px 15px;
+  padding: 12px;
   font-size: 14px;
 }
 
@@ -256,37 +257,49 @@ div input {
   color: white;
   border-radius: 7px;
   width: 100%;
-  padding: 8px;
+  padding: 12px;
   cursor: pointer;
 }
 
-.table-section {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  margin-top: 2px;
-  border-radius: 7px !important;
-}
 table {
-  width: 100%;
   text-align: left;
   width: 100%;
   height: 100%;
 }
 
+.table-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  margin-top: 2px;
+  border-radius: 5px !important;
+  padding: 2px;
+}
+
 td {
-  padding: 5px 20px;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
 }
 
 .table-header {
-  padding: 10px 5px !important;
+  padding: 10px 20px !important;
   background: #0c5b75 !important;
   color: white;
   border-radius: 5px !important;
 }
 
-.table-header th {
-  padding: 10px 20px;
+.table-header {
+  padding: 12px 20px;
+}
+
+th {
+  text-align: center;
+  padding: 12px;
+  border-radius: 5px;
 }
 
 tr:nth-child(odd) {
@@ -295,5 +308,17 @@ tr:nth-child(odd) {
 
 tr:nth-child(even) {
   background: rgb(223, 217, 217);
+}
+
+/* mobile responsive */
+@media only screen and (max-width: 375px) {
+  .container {
+    background: #e8e8ec;
+  }
+}
+@media only screen and (min-width: 475px) {
+  .container {
+    background: #e8e8ec;
+  }
 }
 </style>
