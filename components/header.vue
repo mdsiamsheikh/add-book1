@@ -275,21 +275,21 @@ table {
   text-align: center;
   align-items: center;
   margin-top: 2px;
-  border-radius: 5px !important;
+  border-radius: 7px !important;
   padding: 2px;
 }
 
 td {
   text-align: center;
-  padding: 8px;
-  border-radius: 5px;
+  padding: 10px;
+  border-radius: 7px;
 }
 
 .table-header {
   padding: 10px 20px !important;
   background: #0c5b75 !important;
   color: white;
-  border-radius: 5px !important;
+  border-radius: 7px !important;
 }
 
 .table-header {
@@ -298,8 +298,8 @@ td {
 
 th {
   text-align: center;
-  padding: 8px;
-  border-radius: 5px;
+  padding: 17px;
+  border-radius: 7px;
 }
 
 tr:nth-child(odd) {
@@ -319,6 +319,30 @@ tr:nth-child(even) {
 @media only screen and (min-width: 376px) and (max-width: 475px) {
   .container {
     background: #e8e8ec;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  th {
+    padding: 5px;
+  }
+}
+
+@media only screen and (min-width: 390px) and (max-width: 896px) {
+  th {
+    padding: 2px;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  td {
+    padding: 5px;
+  }
+}
+
+@media only screen and (min-width: 390px) and (max-width: 896px) {
+  td {
+    padding: 2px;
   }
 }
 </style>
