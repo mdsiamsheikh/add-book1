@@ -1,7 +1,7 @@
 <template>
   <div class="siam">
     <section class="container">
-      <h1>Add Favorite Book</h1>
+      <h1 class="name">Add Favorite Book</h1>
       <form id="book-form">
         <div>
           <label for="title">Book</label>
@@ -198,6 +198,23 @@ export default {
 </script>
 
 <style>
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -10px;
+}
+
 .container {
   background: #e8e8ec;
   align-items: center;
@@ -205,10 +222,8 @@ export default {
   max-width: 1200px;
   margin: auto;
   box-sizing: border-box;
-  padding: 0 10px;
   border-radius: 5px;
   font-family: Arial, Helvetica, sans-serif;
-  margin-top: -30px;
   padding: 5px 10px 30px 10px;
 }
 h1 {
