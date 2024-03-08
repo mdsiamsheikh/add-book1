@@ -1,6 +1,5 @@
 # Add-book
-Building a sleek add-book web app using Vue.js and Nuxt.js, with a secure MongoDB API. Your skillful application of CSS3 grid, transform, and BEM convention ensures an optimal and visually appealing UI design, delivering  responsive experience across various screens.
-
+Developing a stylish address book web application with Vue.js and Nuxt.js, supported by a secure MongoDB API. Employing advanced CSS3 techniques such as grid, transform, and BEM convention for an optimal and visually appealing user interface, ensuring responsiveness on diverse screen sizes.
 Live version of this site: https://addbook1.netlify.app
 
 # Demo
